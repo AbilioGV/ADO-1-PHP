@@ -1,0 +1,342 @@
+/* Border box. */
+
+#testefw-run * {
+    box-sizing: border-box;
+}
+
+/* Títulos e listas. */
+
+#testefw-run ul {
+    list-style-type: none;
+    padding-inline-start: 0;
+    padding: 0;
+}
+
+#testefw-run ul, #testefw-run ol, #testefw-run h1, #testefw-run h2, #testefw-run h3 {
+    margin: 0;
+}
+
+#testefw-run h1 {
+    font-size: 2em;
+}
+
+#testefw-run h2 {
+    font-size: 1.6em;
+}
+
+#testefw-run h3, #testefw-nota label {
+    font-size: 1.2em;
+}
+
+#testefw-run h1, #testefw-run h2, #testefw-run h3, #testefw-nota label {
+    font-weight: bold;
+}
+
+#testefw-run button {
+    border: 1px black solid;
+    background: blue;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    height: 25px;
+    font-size: 1em;
+    border-radius: 10px;
+}
+
+/* Resultados de testes. */
+
+.testefw-grupo {
+    display: block;
+}
+
+.testefw-exercicio,
+.testefw-grupo {
+    border: 1px black solid;
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.testefw-exercicio:last-child {
+    margin-bottom: 0px;
+}
+
+.testefw-grupo.testefw-ok,
+.testefw-exercicio.testefw-ok {
+    background: #D0FFD0;
+}
+
+.testefw-grupo.testefw-niy,
+.testefw-grupo.testefw-skip {
+    background: #A0A0A0;
+}
+
+.testefw-grupo.testefw-parcial {
+    background: #FFFFC0;
+}
+
+.testefw-grupo.testefw-erro {
+    background: #FFC0C0;
+}
+
+.testefw-grupo.testefw-executando-ok {
+    background: #00FF00;
+}
+
+.testefw-grupo.testefw-executando-erro {
+    background: #FF0000;
+}
+
+.testefw-grupo.testefw-executando-parcial {
+    background: #FFFF00;
+}
+
+.testefw-grupo.testefw-executando-niy,
+.testefw-grupo.testefw-executando-skip {
+    background: #FFFFFF;
+}
+
+.testefw-grupo.testefw-futuro {
+    background: #C0FFFF;
+}
+
+.testefw-exercicio.testefw-ok {
+    background: #90FF90;
+}
+
+.testefw-exercicio.testefw-niy {
+    background: #E0E0E0;
+}
+
+.testefw-exercicio.testefw-erro {
+    background: #FF8080;
+}
+
+.testefw-exercicio.testefw-skip {
+    background: #C0C0C0;
+}
+
+.testefw-exercicio.testefw-executando {
+    background: #FFFFFF;
+}
+
+.testefw-exercicio.testefw-futuro {
+    background: #00FFFF;
+}
+
+.testefw-exercicio .testefw-regra span {
+    font-weight: bold;
+}
+
+.testefw-exercicio .testefw-codigo span {
+    font-family: monospace;
+}
+
+.testefw-exercicio .testefw-destaque,
+.testefw-exercicio .testefw-inesperado {
+    font-weight: bold;
+    background: yellow;
+    white-space: pre;
+}
+
+.testefw-bloco {
+    display: inline-block;
+    vertical-align: top;
+}
+
+/* Cabeçalho do resultado dos testes. */
+
+#testefw-nota {
+    border: 1px black solid;
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background: white;
+    position: sticky;
+    top: 0;
+}
+
+#testefw-contasucessos {
+    color: #00C000;
+}
+
+#testefw-contaerros {
+    color: #FF0000;
+}
+
+#testefw-contapulos {
+    color: #808080;
+}
+
+#testefw-contaniy {
+    color: #C0C0C0;
+}
+
+#testefw-contaespera {
+    color: #00C0C0;
+}
+
+#testefw-nota > div {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#testefw-nota h1, #testefw-nota h2, #testefw-div-seguir {
+    display: inline-block;
+}
+
+#testefw-seguir, #testefw-nota label {
+    margin: 0;
+    height: 25px;
+    vertical-align: middle;
+}
+
+.testefw-oculto {
+    display: none;
+}
+
+.testefw-perigo {
+    color: red;
+}
+
+.testefw-botao {
+    border: 1px black solid;
+    background: blue;
+    color: white;
+    text-align: center;
+    float: right;
+    width: 2em;
+    font-size: 1.6em;
+    padding: 10px;
+    border-radius: 1em;
+    font-family: sans-serif;
+}
+
+/* Erros gravíssimos. */
+
+.testefw-gravissimo {
+    background: yellow;
+    border: 1px black solid;
+    position: sticky;
+    margin: 0;
+    padding: 10px;
+    top: 0;
+    font-weight: bold;
+    z-index: 1;
+}
+
+.testefw-gravissimo h1 {
+    animation: pisca-pisca-vermelho 0.3s linear infinite;
+    color: red;
+    margin: 20px;
+    text-align: center;
+}
+
+.testefw-gravissimo p {
+    font-size: 1.2em;
+    margin-top: 0;
+}
+
+.testefw-gravissimo p:not(:last-child) {
+    margin-bottom: 0;
+}
+
+@keyframes pisca-pisca-vermelho {
+  20% {
+    opacity: 1;
+  }
+  30% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+}
+
+/* Lista dos alunos. */
+
+#testefw-alunos li {
+    font-weight: bold;
+    font-size: 1.2em;
+    background: #FFE0C0;
+    border: 1px black solid;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 2px;
+    text-align: center;
+    display: inline-block;
+}
+
+#testefw-alunos li:first-child {
+    margin-left: 0;
+}
+
+#testefw-alunos li:last-child {
+    margin-right: 0;
+}
+
+/* Formulário de execução. */
+
+#testefw-form-executar * {
+    box-sizing: border-box;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+#testefw-form-executar {
+    border: 1px black solid;
+    background: #DFF;
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+#testefw-form-executar p {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    vertical-align: text-top;
+}
+
+#testefw-form-executar label {
+    display: block;
+    font-size: 1.2em;
+}
+
+#testefw-form-executar input {
+    width: 75px;
+}
+
+#testefw-form-executar label, #testefw-form-executar input[type="text"], #testefw-form-executar button {
+    height: 25px;
+}
+
+#testefw-form-executar button {
+    border: 1px black solid;
+    background: blue;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    height: 25px;
+    font-size: 1em;
+    border-radius: 10px;
+}
+
+#testefw-form-executar :disabled {
+    background: silver;
+}
+
+#testefw-form-executar input {
+    border: 1px black solid;
+    background: #0FF;
+    border-radius: 5px;
+    padding: 2px;
+    font-size: 1.25em;
+}
